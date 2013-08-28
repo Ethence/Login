@@ -1,0 +1,178 @@
+html,body {
+	height: 100%;
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+body {
+	background: gray url("./Images/Java_Compatible_logo.png") no-repeat 97%
+		95%;
+	font-family: Arial;
+}
+
+table {
+	margin: 10px 0 0 40px;
+	border-collapse: collapse;
+}
+
+td {
+	color: white;
+	font-size: 13px;
+	font-weight: bold;
+	border: 0;
+	padding-top: 13px;
+	white-space: nowrap;
+}
+
+.img-text {
+	display: none;
+}
+
+#loginbox {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	margin: -180px 0px 0px -268px;
+	width: 537px;
+	height: 360px;
+}
+
+div.top-bar {
+	width: 537px;
+	height: 30px;
+	background: url("./Images/login_top.png") no-repeat;
+}
+
+div.middle-bar {
+	height: 230px;
+	background: url("./Images/login_middle.png") repeat-y;
+}
+
+div.bottom-bar {
+	width: 537px;
+	height: 100px;
+	background: url("./Images/login_bottom.png") no-repeat;
+}
+
+div.product-img {
+	height: 300px;
+	width: 200px;
+	margin: -270px 0 0;
+	float: right;
+	background: url("./Images/SVC_productrendering.png") no-repeat;
+}
+
+div.product-name {
+	height: 40px;
+	width: 360px;
+	margin: -10px 0 0 20px;
+	background: url("./Images/SVC_productname.png") no-repeat;
+}
+
+div.sm {
+	margin: 0 0 0 30px;
+	font-size: 18px;
+	color: white;
+	white-space: nowrap;
+}
+
+div.sm span {
+	font-weight: bold;
+}
+
+td.label-cell {
+	padding-right: 35px;
+}
+
+input[type="text"],input[type="password"] {
+	border: 0;
+	border-radius: 4px;
+	background: #7A7A7A url("./Images/textBG.png") no-repeat;
+	/*background-size: cover;*/
+	height: 20px;
+	width: 203px;
+}
+
+input[type="checkbox"],input[type="button"] {
+	display: none;
+}
+
+input[type="checkbox"]+label {
+	display: inline-block;
+	background: url("./Images/checkbox-enabled.png") no-repeat left top;
+	width: 15px;
+	height: 13px;
+	vertical-align: -1px;
+}
+
+input[type="checkbox"]:checked+label {
+	display: inline-block;
+	background: url("./Images/checkbox-selected.png") no-repeat left top;
+	width: 15px;
+	height: 13px;
+	vertical-align: -1px;
+}
+
+#lgm {
+	color: #C8C8C8;
+	font-size: 12px;
+	font-weight: lighter;
+	padding-right: 6px;
+	padding-left: 4px;
+}
+
+input[type="button"]+label {
+	display: inline-block;
+	background: url("./Images/button.png") no-repeat;
+	width: 23px;
+	height: 22px;
+	vertical-align: -6px;
+	cursor: pointer;
+}
+
+div.alert {
+	color: white;
+	font-size: 11px;
+	font-weight: bold;
+	margin: 30px 0 0;
+	width: 535px;
+	height: 20px;
+	background: #8B0000;
+	margin-left: 1px;
+}
+
+.alert span {
+	position: relative;
+	top: 4px;
+	left: 20px;
+}
+
+div.ibmlogo {
+	width: 8px;
+	height: 20px;
+	padding-right: 40px;
+	float: right;
+	background: url("./Images/login_ibmlogo.png") no-repeat;
+	position: relative;
+	top: 15px;
+	right: 20px;
+}
+
+div.cp {
+	color: white;
+	font-size: 8px;
+	font-weight: bold;
+	position: relative;
+	top: 10px;
+	left: 20px;
+}
+
+#javalink {
+	display: block;
+	position: absolute;
+	bottom: 5%;
+	right: 3%;
+	height: 60px;
+	width: 40px;
+}
