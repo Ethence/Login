@@ -29,6 +29,7 @@ var demo = {
             var ddm = new DropDownMenu(uNameNode, cname, DropDownMenu.strategy.extendMailServersCrossDomainJSONP(url));
             ddm.init();
         },
+        
         /*
         vote: function (uNameNode, voteNode, cname) {
             var url1 = "servers.json";
@@ -39,16 +40,15 @@ var demo = {
         },
         */
         
-        run : function(par) {
+        run : function() {
+        	var queries = DropDownMenu.utils.getQueryStringArgs();
+        	var m = queries[Constants.METHOD];
+        	if (!m) m = "jsonp";
             var u = "user-txt";
             var cname = "ddm";
             var uName = document.getElementById(u);
-            demo[par](uName, cname);
+            if (demo[m]) demo[m](uName, cname);
         }
 };
 
-//demo.run("text");
-//demo.run("local");
-//demo.run("xhrsync");
-//demo.run("xhrasync");
-demo.run("jsonp");
+demo.run();

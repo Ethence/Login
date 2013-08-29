@@ -11,7 +11,8 @@ var Constants = {
 		AT: "@",
 		ITEM: "item",
 		ACTIVE: "active",
-		CBPREFIX: "cb"
+		CBPREFIX: "cb",
+		METHOD: "method"
 };
 
 /*
@@ -37,6 +38,8 @@ DropDownMenu.prototype.init = function () {
             self.show();
         }
     );
+    
+    //DOM Example; DOM Events Example
     DropDownMenu.utils.registerHandler(this.target, "keyup",
             function(event) {
                 if (!event) event=window.event;
@@ -202,8 +205,6 @@ DropDownMenu.strategy = {
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState == 4){
                         if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
-                            //if (self.menuNode.hasChildNodes()) self.menuNode.innerHTML = "";
-                            //need to check whether this userInput is the most current one.
                             if (self.target.value == userInput)
                                 self.fillData(DropDownMenu.utils.extendEmailServers(JSON.parse(xhr.responseText), userInput));
                         } 
@@ -313,5 +314,30 @@ DropDownMenu.utils = {
                 return strs;
             }
             else return [];
+        },
+        
+        getQueryStringArgs: function () {
+        	//get query string without the initial ?
+        	var qs = (location.search.length > 0 ? location.search.substring(1) : "");
+        	//object to hold data
+        	var args = {};
+        	//get individual items
+        	var items = qs.length ? qs.split("&") : [];
+        	var item = null;
+        	var name = null;
+        	var value = null;
+        	//used in for loop
+        	var i = 0;
+        	var len = items.length;
+        	//assign each item onto the args object
+        	for (i=0; i < len; i++){
+        		item = items[i].split("=");
+        		name = decodeURIComponent(item[0]);
+        		value = decodeURIComponent(item[1]);
+        		if (name.length) {
+        			args[name] = value;
+        		}
+        	}
+        	return args;				
         }
 };
